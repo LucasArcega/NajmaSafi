@@ -1,0 +1,604 @@
+#posts{
+
+    margin-top: 0;
+    font-size: 18px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+body{
+    height: 100%;
+}
+#posts p{
+
+    font-size: 18px;
+    word-break: break-word;
+}
+
+.modal-backdrop{
+   z-index: -1 !important;
+}
+
+.titulo-postagem{
+
+    margin-bottom: 40px;
+
+}
+
+.navbar{
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    background-color: black;
+}
+
+.navbar-initial{
+
+    background-color: rgba(0,0,0,0);
+    padding: 20px 5px;
+    transition: all 0.5s;
+    
+}
+
+.post{
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+
+.navbar-brand{
+
+
+    font-size: x-large;
+    transition: all 0.5s;
+}
+
+.navbar-brand:hover{
+    font-size: 25px;
+    transition: all 0.5s;
+}
+
+
+
+.navbar-inverse .navbar-nav>li>a{
+    font-size: 20px;
+    transition: all 0.5s;
+    color: #c8c3c1;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    font-size: 22px;
+    transition: all 0.5s;
+    text-shadow:  -1px 0 25px white;
+}
+
+.navbar-inverse .navbar-nav>li>a:active{
+    font-size: 22px;
+    transition: all 0.5s;
+    color: white;
+}
+.header{
+    margin-bottom: 0;
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.header-index {
+
+    
+    background-image: url('../imagens/backgrounds/noticias/background.jpg');
+    
+
+}
+
+
+.top-nav-collapse{
+    padding: 5px;
+    background-color: rgba(0,0,0,0.7);
+    transition: all 0.5s;
+
+}
+.fa{
+    padding: 0;
+}
+.fa-facebook-square{
+
+    color: #3b5998;
+
+}
+.fa-youtube-square{
+
+    color: red;
+
+}
+.link-social{
+
+    padding: 0;
+}
+
+#footer{
+
+    background-color: black;
+    min-height: 50px;
+    color: white;
+    padding: 15px;
+}
+
+#footer p{
+
+    margin: auto;
+
+}
+
+.contato{
+
+    background-color: white;
+
+}
+
+#editar-contato-wrapper{
+    padding-left: 0;
+}
+
+#editar-sobre-wrapper, #editar-sobre-imagem-wrapper{
+    padding: 10px 0;
+}
+.fa-whatsapp{
+
+    color: green;
+}
+
+
+.configuracao{
+
+    background-color: white;
+    padding: 50px 100px;
+}
+
+.configuracao>h2{
+
+    margin-left: 30px;
+}
+
+.form-contato{
+
+}
+
+.modal-backdrop {
+    z-index: -1;
+}
+
+.modal-body{
+
+    border:none;
+    background-color: white;
+    padding-top: 0;
+}
+.modal-header {
+    padding: 15px;
+}
+
+
+
+h2{
+
+    display: initial;
+}
+
+.excluir{
+    float: right;
+    color: darkgrey;
+    background-color: white;
+}
+
+
+.excluir:hover{
+
+    text-decoration: none;
+    color: red;
+}
+
+.input-enviar{
+
+    overflow: hidden;
+
+    opacity: 0;
+}
+.btn-alterar{
+
+    background-color: rgba(255,255,255,0.3);
+    color: #fff;
+}
+
+.btn-alterar.focus, .btn-alterar:focus{
+
+    background-color: inherit;
+    color: #fff;
+}
+.form-imagem{
+    background-color: rgba(255,255,255,0);
+    opacity: 0.2;
+    transition: 0.5s all;
+
+}
+
+.form-imagem:hover,.form-imagem:active{
+
+    opacity: 1;
+
+}
+
+.header-quemSomos{
+
+    background-image: url('http://placehold.it/1920x1080');
+
+
+}
+
+#quemSomos-wrapper{
+    background-color: white;
+}
+
+#quemSomos-wrapper>:first-child{
+    margin-top: 100px;
+}
+
+.foto-equipe{
+
+    max-width: 420px;
+    max-height: 500px;
+
+}
+
+.professor{
+
+    margin-bottom: 100px;
+
+}
+
+.btn-add{
+    border-radius: 100%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.background-responsive{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 500px;
+
+
+
+}
+textarea{
+    resize: none;
+}
+
+.btn-add{
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 100%;
+
+}
+
+.modal-header .close {
+    margin-top: 5px;
+}
+
+.modal-header{
+    margin-bottom: 15px;
+
+}
+
+.form-imagem h3{
+    color: white;
+    text-shadow: -3px 2px 4px rgba(10, 10, 10, 1);
+    text-align: center;
+}
+
+.form-imagem>:nth-child(2){
+
+}
+.pagina-atual{
+    color: #FFF !important;
+}
+.jumbotron{
+
+    padding: 100px 10px;
+}
+
+
+.header-home{
+
+    position: relative;
+    display: block;
+    min-height: 500px;
+    height: 100%;
+    width: auto;
+    background-color: #222;
+    background: no-repeat center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding: 50px 0;
+
+}
+
+.conserta-float::after{
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.sobre{
+
+    font-size: large;
+    background-color: #fbfbfb;
+}
+
+.sobre div{
+    background-color: white;
+
+}
+
+
+.fa-circle-o{
+    font-size: 15em;
+
+}
+
+.fa-angle-double-down{
+
+    color: #d6d6d6;
+    font-size: 5em;
+    transition: 0.5s all;
+
+}
+
+.fa-angle-double-down:hover{
+    color: white;
+    font-size: 7em;
+}
+#frmBackground{
+    position: absolute;
+}
+.endereco-wrapper{
+    padding-left: 30px;
+}
+
+.fa-user{
+    cursor: pointer;
+}
+.logo{
+    width: 180px;
+}
+
+.sobre{
+
+    font-size: medium;
+    background-color: white;
+}
+
+
+@media only screen and (min-width : 320px) {
+
+    .redes-sociais, .telefones{
+        margin-left: 15px;
+    }
+
+
+
+
+    .page-top{
+        margin-top: 10%;
+    }
+
+
+    .fa-circle-o{
+        font-size: 8em;
+        color: white;
+    }
+
+    .sidebar-collapsed{
+
+        margin-left: -100%;
+        background-color: white;
+    }
+
+
+    
+    .redes-sociais td, .telefones td{
+
+        margin-bottom: 10px;
+
+    }
+
+    #quemSomos-wrapper p{
+        font-size: 16px;
+
+    }
+
+
+    .contato{
+        padding-top: 75px;
+        background-color: white;
+    }
+
+    #contato{
+        background-color: #fbfbfb;
+    }
+
+    .page-top h1{
+
+        font-size: 40px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+
+    .page-top h2{
+
+        font-size: 20px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+
+}
+
+@media only screen and (min-width : 480px) {
+
+    .page-top h1{
+
+        font-size: 60px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+
+    .page-top h2{
+
+        font-size: 40px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+
+}
+
+@media only screen and (max-width : 767px) {
+
+    .professor>:nth-child(2){
+
+        margin-top: 50px;
+
+    }
+
+    #endereco-wrapper{
+
+        margin-top: 40px;
+    }
+
+
+}
+
+@media only screen and (min-width : 768px) {
+
+    .sobre div{
+        padding: 30px;
+    }
+
+    .sobre{
+
+        font-size: large;
+        background-color: #fbfbfb;
+    }
+
+    body{
+
+        background-color: rgba(249, 249, 249, 1);
+
+    }
+
+    .fa-circle-o{
+        font-size: 12em;
+
+    }
+
+    .page-top{
+        margin-top: 5%;
+    }
+
+
+    .redes-sociais, .telefones{
+
+       margin-left: 30px;
+        margin-bottom: 20px;
+    }
+
+    .contato{
+
+        padding: 50px;
+        padding-top: 100px;
+    }
+
+
+    #quemSomos-wrapper p{
+
+
+        font-size: 22px;
+
+    }
+
+    .page-top h1{
+
+        font-size: 60px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+
+    .page-top h2{
+
+        font-size: 40px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+
+}
+
+.modal-content{
+
+    border: 0;
+}
+.modal-danger{
+    color: white;
+    background-color: #c9302c;
+    border-color: #c9302c;
+    border-style: solid;
+    border-radius: 6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+    .page-top h1{
+
+        font-size: 70px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+    .fa-circle-o{
+        font-size: 15em;
+
+    }
+
+    .page-top h2{
+
+        font-size: 50px;
+        color: white;
+        letter-spacing: 5px;
+
+    }
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}	

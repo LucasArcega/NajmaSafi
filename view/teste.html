@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova postagem - Najma Safi</title>
+
+    <script type = "text/javascript" src="../scripts/jquery.js"></script>
+    <script type = "text/javascript" src="../scripts/bootstrap.min.js"></script>
+    <script type = "text/javascript" src="../scripts/jquery.easing.1.3.min.js"></script>
+    <script type = "text/javascript" src="../scripts/navbar.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/estilo.css"/>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    function ajax(nome, sobrenome){
+
+      conteudo = {nome: nome,
+                sobrenome: sobrenome};
+
+        $.ajax({
+            type: 'post',
+            url: 'arquivo.php',
+            data: conteudo
+        }).done(function(data){
+
+            console.log(data);
+        });
+    }
+
+    $(document).ready(function (){
+
+
+
+        $("input[name = enviar]").click(function(){
+
+            var nome = $("input[name = nome]").val();
+            var sobrenome = $("input[name = sobrenome]").val();
+
+            ajax(nome, sobrenome);
+            return false;
+        });
+
+
+    });
+
+
+</script>
+
+<form method="post" action="">
+
+    <input name="nome" placeholder="nome" type="text">
+    <input name="sobrenome" placeholder="Sobrenome" type="text">
+    <input type="submit" name="enviar" class="btn btn-primary">
+
+</form>
+</body>
+
+</html>

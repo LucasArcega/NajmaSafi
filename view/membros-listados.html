@@ -1,0 +1,25 @@
+
+    <div class="col-sm-4 col-xs-12 foto-equipe text-center">
+        <img ng-src="{{membro.enderecoImagemMembro}}" class="img-rounded img-responsive" alt="">
+    </div>
+
+    <div class="col-xs-12 col-sm-8">
+        <h2>{{membro.nomeMembro}}
+
+            <button ng-click="setMembroProp('codigo',membro.codigoMembro); ModalDeleteOpen(); "
+                    class='excluir btn' href='#'> <i class='fa fa-remove'></i>
+            </button>
+
+        </h2>
+
+        <p class="text-left">
+            <br>
+            {{membro.sobreMembro}}
+        </p>
+        <div class="text-right">
+            <button ng-click="setEditarMembro(membro); formMembroOpen()" class="btn btn-warning">Editar</button>
+        </div>
+    </div>
+
+    <div class="col-xs-12"><hr></div>
+    <hr>
