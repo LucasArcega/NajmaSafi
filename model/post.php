@@ -29,7 +29,7 @@ class Post extends Banco{
 
 	public function ListPosts(){
 
-		$query = "SELECT codigoPostagem, tituloPostagem, dataPostagem, conteudoPostagem, facebookPostagem,	youtubePostagem FROM postagens ORDER BY codigoPostagem DESC ";
+		$query = "SELECT codigoPostagem, tituloPostagem, DATE_FORMAT(dataPostagem, '%d/%m/%Y') AS dataPostagem, conteudoPostagem, facebookPostagem,	youtubePostagem FROM postagens ORDER BY codigoPostagem DESC ";
 
 		if($resultado = $this->ReturnBanco()->query($query)){
 
