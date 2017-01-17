@@ -5,8 +5,8 @@
 
     $membro = new Membro();
 
-    $data = json_decode(file_get_contents("php://input"));
+    $codigo = $_POST['codigo'];
 
-    return $membro->DeleteMembro($data->codigoMembro);
+    return $membro->DeleteMembro($codigo);
 
 ?>

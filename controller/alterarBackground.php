@@ -1,6 +1,5 @@
 <?php
 
-
     include ('../model/Background.php');
 
     if(!empty($_FILES)){

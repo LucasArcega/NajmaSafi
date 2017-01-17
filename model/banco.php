@@ -15,8 +15,8 @@ abstract class Banco
 
     public function __construct(){
 
-        $this->banco = new mysqli("mysql.hostinger.com.br", "u147328039_najma", "najmasafi", "u147328039_najma");
-        //$this->banco = new mysqli("localhost", "root", "", "najmasafi");
+        //$this->banco = new mysqli("mysql.hostinger.com.br", "u147328039_najma", "najmasafi", "u147328039_najma");
+        $this->banco = new mysqli("localhost", "root", "", "najmasafi");
         ini_set('default_charset','UTF-8');
         $this->banco->query("SET NAMES 'utf8'");
         $this->banco->query('SET character_set_connection=utf8');

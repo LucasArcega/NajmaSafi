@@ -1,14 +1,14 @@
 <?php
-include('../model/Background.php');
-session_start();
-if(!isset($_SESSION['usuario']) && $_SESSION['logado']!=true ){
+    include('../model/Background.php');
+    session_start();
 
-    header("Location: ../Home/");
-}
+    if(!isset($_SESSION['usuario']) && $_SESSION['logado']!=true ){
+        header("Location: ../Home/");
+    }
 
-function logOut(){
-    session_destroy();
-}
+    function logOut(){
+        session_destroy();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +30,7 @@ function logOut(){
     <script type = "text/javascript" src="../scripts/bootbox.min.js"></script>
     <script type = "text/javascript" src="../scripts/scrolling-nav.js"></script>
     <script type = "text/javascript" src="../scripts/navbar.js"></script>
+    <script type = "text/javascript" src="../scripts/quemSomos.js"></script>
 </head>
 <body >
 
@@ -68,8 +69,10 @@ function logOut(){
 
 	<div class="container-fluid">
 		<div ng-controller="MembrosCtlr as Membros" class="row">
-			<div id='top'  style=" background-image: url('<?php $background = new Background(); echo $background->GetBackground('backgroundQuemSomos')[0] ?>'); " class="jumbotron header header-quemSomos">
+			<div id='top'  style=" background-image: url('<?php $background = new Background(); echo $background->GetBackground('backgroundQuemSomos')[0] ?>'); " class="text-center header header-quemSomos">
+                <div class="mascara">
 
+                </div>
                 <br><br>
                 <form class="form-imagem col-sm-4 col-sm-offset-4" enctype="multipart/form-data" id="frmBackground" action="">
 
@@ -88,12 +91,19 @@ function logOut(){
 
                 </form>
 
+                <div  class="page-top">
+                    <i><img class="logo" src="../imagens/logo/logo.png" alt="Najma Safi"> </i>
+                    <h1>Najma Safi</h1>
+                    <h2>Quem Somos</h2>
+                    <br>
+                    <a class="page-scroll" href="#sobre"><i class="fa fa-angle-double-down"></i></a>
+                </div>
 
 			</div>
 
 			<div id="quemSomos-wrapper" class="col-xs-12 col-sm-10 col-sm-offset-1">
-				<div ng-repeat="membro in membros" class="professor col-xs-12">
-					<membros-listados>	</membros-listados>
+				<div id="membros" class="professor col-xs-12">
+
 				</div>
 			</div>
 			<button ng-click="inserirMembro()" class="btn btn-lg btn-primary btn-add">+</button>

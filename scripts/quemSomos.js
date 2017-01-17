@@ -1,8 +1,36 @@
-/**
- * Created by lucas on 16/01/2017.
- */
+$(document).ready(function(){
+
+    buscarMembros();
+    $('#membros').delegate('.excluir','click',function () {
+        var id = $(this).data('codigomembro');
+        bootbox.confirm({
+            title: '<h3 class="modal-title " id="modal-title">Confirmar exclusão <i class="fa pull-right fa-trash-o"> </i></h3>',
+            message: '<h3>Esse registro será deletado permanentemente, deseja prosseguir?</h3>',
+            buttons:{
+                confirm: {
+                    label: 'Deletar',
+                    className: 'btn-danger'
+                },
+                cancel: {
+                    label: 'Cancelar',
+                    className: 'btn-default'
+                }
+            },
+            callback:function () {
+                deletarMembro(id);
+            },
+            className: "modal-delete"
+        });
+    });
+
+});
 
 
+
+function nl2br(string) {
+    return string.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2');
+
+}
 
 function buscarMembros() {
     $.ajax({
@@ -10,24 +38,25 @@ function buscarMembros() {
         success: function (response) {
             response = JSON.parse(response);
             listarMembros(response);
-
         }
 
     });
 }
 
 function listarMembros(membros) {
-    for (var index in response){
-        response[index].sobreMembro = nl2br(response[index].sobreMembro);
+    $('#membros').empty();
+    for (var index in membros){
+        membros[index].sobreMembro = nl2br(membros[index].sobreMembro);
         $('#membros').append(
             '<div class="col-sm-4 col-xs-12 foto-equipe text-center">'+
-            '<img src="'+response[index].enderecoImagemMembro+'" class="img-rounded img-responsive" alt="">'+
+                '<img src="'+membros[index].enderecoImagemMembro+'" class="img-rounded img-responsive" alt="">'+
             '</div>'+
             '<div class="col-xs-12 col-sm-8">'+
-            '<h2>'+response[index].nomeMembro+'</h2>'+
+              '<h2>'+membros[index].nomeMembro+
+              "<button data-codigoMembro='"+membros[index].codigoMembro+"' class='excluir btn' href='#'> <i class='fa fa-remove'></i></button>'</h2>"+
             '<p class="text-left">'+
             '<br>'+
-            response[index].sobreMembro+
+            membros[index].sobreMembro+
             '</p>'+
 
             '</div>'+
@@ -39,6 +68,18 @@ function listarMembros(membros) {
     }
 }
 
+function deletarMembro(codigo) {
+    $.ajax({
+
+        url: '../controller/deletarMembro.php',
+        data: {codigo: codigo},
+        success: function (response) {
+            
+        }
+
+
+    });
+}
 
 function inserirMembro() {
     $.ajax({

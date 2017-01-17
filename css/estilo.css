@@ -563,7 +563,7 @@ textarea{
 
     border: 0;
 }
-.modal-danger{
+.modal-delete .modal-header{
     color: white;
     background-color: #c9302c;
     border-color: #c9302c;
@@ -571,6 +571,10 @@ textarea{
     border-radius: 6px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+.modal-delete .bootbox-close-button{
+    visibility: hidden;
 }
 
 /* Medium Devices, Desktops */
