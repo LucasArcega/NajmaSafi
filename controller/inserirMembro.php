@@ -8,20 +8,23 @@
  */
     require ('../model/membro.php');
 
-    $membroData = json_decode($_POST['membro']);
+
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+
 
     if(!empty($_FILES)){
 
-        if ((($_FILES["image"]["type"] == "image/gif")
-                || ($_FILES["image"]["type"] == "image/jpeg")
-                || ($_FILES["image"]["type"] == "image/jpg")
-                || ($_FILES["image"]["type"] == "image/png"))) {
+        if ((($_FILES["imagem"]["type"] == "image/gif")
+                || ($_FILES["imagem"]["type"] == "image/jpeg")
+                || ($_FILES["imagem"]["type"] == "image/jpg")
+                || ($_FILES["imagem"]["type"] == "image/png"))) {
 
-            $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            $image = "membro-" . $membroData->nome . "." . $ext;
-            move_uploaded_file($_FILES["image"]["tmp_name"], '../imagens/membros/' . $image);
+            $ext = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+            $image = "membro-" . $nome . "." . $ext;
+            move_uploaded_file($_FILES["imagem"]["tmp_name"], '../imagens/membros/' . $image);
             $membro = new Membro();
-            echo $membro->InsertMembro($membroData->nome, $membroData->descricao, "../imagens/membros/" . $image);
+            echo $membro->InsertMembro($nome, $descricao, "../imagens/membros/" . $image);
         }else{
             echo "O arquivo enviado não possui um formato de imagem aceito. Formatos aceitos: '.gif', '.jpeg', '.jpg', '.png'.";
         }

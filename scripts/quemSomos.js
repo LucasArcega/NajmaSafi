@@ -16,11 +16,17 @@ $(document).ready(function(){
                     className: 'btn-default'
                 }
             },
-            callback:function () {
-                deletarMembro(id);
+            callback:function (response) {
+                if(response)
+                    deletarMembro(id);
             },
             className: "modal-delete"
         });
+    });
+
+    $('#frmMembro').submit(function (e) {
+        e.preventDefault();
+        inserirMembro(this);
     });
 
 });
@@ -53,7 +59,7 @@ function listarMembros(membros) {
             '</div>'+
             '<div class="col-xs-12 col-sm-8">'+
               '<h2>'+membros[index].nomeMembro+
-              "<button data-codigoMembro='"+membros[index].codigoMembro+"' class='excluir btn' href='#'> <i class='fa fa-remove'></i></button>'</h2>"+
+              "<button data-codigoMembro='"+membros[index].codigoMembro+"' class='excluir btn' href='#'> <i class='fa fa-remove'></i></button></h2>"+
             '<p class="text-left">'+
             '<br>'+
             membros[index].sobreMembro+
@@ -73,23 +79,46 @@ function deletarMembro(codigo) {
 
         url: '../controller/deletarMembro.php',
         data: {codigo: codigo},
+        method:'POST',
         success: function (response) {
-            
+            bootbox.alert({title:'Mensagem do sistema', message:response});
+            buscarMembros();
         }
 
 
     });
 }
 
-function inserirMembro() {
+function inserirMembro(form) {
     $.ajax({
 
         method  : 'POST',
         url     : '../controller/inserirMembro.php',
         processData: false,
-        data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+        data: new FormData(form), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
         contentType: false,       // The content type used when sending data to the server.
-        cache: false             // To unable request pages to be cached
+        cache: false,             // To unable request pages to be cached
+        success: function(response){
+            $('#modal-membro').modal('hide');
+            bootbox.alert({title:'Mensagem do sistema', message:response});
+            buscarMembros();
+        }
+
+    });
+}
+
+function alterarMembro() {
+    $.ajax({
+
+        method  : 'POST',
+        url     : '../controller/buscarrMembro.php',
+        processData: false,
+        data: new FormData(form), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+        contentType: false,       // The content type used when sending data to the server.
+        cache: false,             // To unable request pages to be cached
+        success: function(response){
+            console.log(response)
+        }
 
     });
 }

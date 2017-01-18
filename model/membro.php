@@ -34,9 +34,24 @@
 
         }
 
+        public function BuscarMembro($codigo){
+            $query = "SELECT codigoMembro, nomeMembro, sobreMembro, enderecoImagemMembro FROM membros WHERE codigoMembro = $codigo";
+
+
+            try{
+                $resultado = $this->ReturnBanco()->query($query);
+            }
+            catch (mysqli_sql_exception $ex){
+                return $ex;
+            }
+
+            return $resultado->fetch_assoc();
+        }
+
         public function ListMembros(){
 
             $query = "SELECT codigoMembro, nomeMembro, sobreMembro, enderecoImagemMembro FROM membros";
+
 
             if($resultado = $this->ReturnBanco()->query($query)){
 

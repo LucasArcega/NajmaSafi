@@ -106,10 +106,48 @@
 
 				</div>
 			</div>
-			<button ng-click="inserirMembro()" class="btn btn-lg btn-primary btn-add">+</button>
+			<button data-toggle="modal" data-target="#modal-membro" class="btn btn-lg btn-primary btn-add">+</button>
 		</div>
 	</div>
 
+
+    <div class="modal fade" role="dialog" id="modal-membro">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div  style="margin-bottom: 10px;" class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3 class="modal-title">Inserir membro</h3>
+                </div>
+
+                <div class="modal-body">
+                    <form  class="" id="frmMembro" action="">
+                        <div class="form-group">
+                            <label for="">Nome*</label>
+                            <input class="form-control"  required type="text" name="nome" placeholder="Nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Descrição*</label>
+                            <textarea class="form-control"  placeholder="Descrição" rows="5" required name="descricao"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Foto*</label>
+                            <input type="file"  accept="image/*" name="imagem" file-upload required >
+                        </div>
+
+                        <div class="text-right">
+                            <button type="button" data-dismiss="modal" class="btn btn-defalt">Cancelar</button>
+                            <input type="submit"  class="btn btn-primary" value="Salvar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
