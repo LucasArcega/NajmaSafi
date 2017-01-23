@@ -6,7 +6,7 @@
  * Time: 03:47
  */
 
-
+    require ('verificarLogado.php');
     include '../model/contato.php';
 
     $contato = new Contato();

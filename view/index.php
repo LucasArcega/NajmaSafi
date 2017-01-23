@@ -60,7 +60,7 @@
              <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
                   <ul class="text-center inverse-dropdown dropdown-menu">
-                      <li><a href="#">Alterar Dados</a></li>
+                      <li><a data-toggle="modal" data-target="#editar-dados-perfil-modal" href="#">Alterar Dados do Perfil</a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="../controller/logoff.php">Sair</a></li>
                   </ul>
@@ -398,7 +398,6 @@
   </div>
 </div>
 
-
 <div id="editar-sobre-imagem-modal" class="modal fade" data-backdrop="static" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
@@ -419,11 +418,42 @@
                 <br style="clear:both">
             </form>
         </div>
-
     </div>
 </div>
 
+<div id="editar-dados-perfil-modal" class="modal fade" data-backdrop="static" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Dados do perfil administrador</h4>
+            </div>
+            <form class="" id='frmDadosPerfil'>
+                <div class="modal-body">
 
+                    <div class="form-group col-xs-12">
+                        <label for="usuario"><i class="fa fa-user">&nbsp;</i>Usuário</label>
+                        <input required class="form-control col-xs-11" id="usuario" type="text" name="usuario" placeholder="Nome de Usuário">
+                    </div>
+
+                    <div class="form-group col-xs-12">
+                        <label for="email"><i class="fa fa-envelope">&nbsp;</i>E-mail</label>
+                        <input class="form-control col-xs-11" type="email" id="email" name="email" placeholder="E-mail">
+                    </div>
+                    <div>
+                        <a data-toggle="modal" data-target="editar-senha-modal" href="#">Alterar senha</a>
+                    </div>
+
+                    <br style="clear:both">
+                </div>
+                <div class="col-xs-12 modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+                <br style="clear:both">
+            </form>
+        </div>
+    </div>
+</div>
 
 <section class="col-xs-12" id="footer">
 
@@ -442,9 +472,7 @@
     return string.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2');
 
   }
-
   function getContatos() {
-
 
     $.ajax({
 
@@ -481,8 +509,41 @@
   }
 
   $(document).ready(function () {
+
       getContatos();
       getSobre();
+
+      $('#frmDadosPerfil').submit(function (e) {
+          e.preventDefault();
+          $.ajax({
+              url:'../controller/alterarDadosPerfil.php',
+              data: $(this).serialize(),
+              method: 'POST',
+              success: function (response) {
+                  if(response == true){
+
+                      bootbox.alert({
+                          title:"Mensagem do sistema",
+                          message: "Dados alterados com sucesso",
+                          callback: function () {
+                              location.reload();
+                          }
+                      });
+                  }else{
+                      bootbox.alert({
+                          title:"Mensagem do sistema",
+                          message: "Erro ao alterar o(s) contato(s)! Se essa mensagem persistir, contate o administrador do sistema",
+                          callback: function () {
+                              location.reload();
+                          }
+                      });
+                  }
+              }
+          });
+
+      });
+
+
       $('#imagem-sobre').fileinput({
           language: "pt-BR",
           allowedFileExtensions: ["jpg", "png", "gif"],
@@ -504,6 +565,9 @@
 
           console.log(form,response);
       });
+
+
+
 
 
       $('#frmContatos').submit(function (e) {
@@ -540,6 +604,9 @@
           });
 
     });
+
+
+
 
     $('#frmSobre').submit(function (e) {
       e.preventDefault();

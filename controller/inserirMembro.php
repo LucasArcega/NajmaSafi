@@ -7,8 +7,7 @@
  *
  */
     require ('../model/membro.php');
-
-
+    require ('verificarLogado.php');
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
 

@@ -1,6 +1,6 @@
 <?php
 
-
+    require ('verificarLogado.php');
     require ('../model/membro.php');
 
     $membro = new Membro();

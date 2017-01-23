@@ -1,5 +1,5 @@
 <?php
-
+require ('verificarLogado.php');
 
 
     if(!empty($_FILES)){

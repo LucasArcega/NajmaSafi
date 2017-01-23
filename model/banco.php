@@ -90,12 +90,12 @@ abstract class Banco
 
         if( $query = $this->ReturnBanco()->query($query) ){
 
-            $retorno = "Query efetuada\n";
+            $retorno = true;
 
         }
         else{
 
-            $retorno = $this->ReturnBanco()->error;
+            $retorno = false;
         }
 
         return($retorno);

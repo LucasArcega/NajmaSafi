@@ -6,7 +6,7 @@
  * Time: 06:23
  */
 
-
+    require ('verificarLogado.php');
     include '../model/sobre.php';
 
 

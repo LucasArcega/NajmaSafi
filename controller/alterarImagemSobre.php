@@ -5,6 +5,7 @@
  * Date: 29/12/2016
  * Time: 06:26
  */
+require ('verificarLogado.php');
 include '../model/sobre.php';
 
 if(!empty($_FILES)){
@@ -28,7 +29,6 @@ if(!empty($_FILES)){
 
         echo json_encode('Formato de imagem não aceito. Envie uma imagem .jpg, .png, .gif ou .jpeg');
     }
-
 }
 
 else{

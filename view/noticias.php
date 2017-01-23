@@ -56,7 +56,7 @@ function logOut(){
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
                     <ul class="text-center inverse-dropdown dropdown-menu">
-                        <li><a href="#">Alterar Dados</a></li>
+                        <li><a href="#">Alterar Dados do Perfil</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="../controller/logoff.php">Sair</a></li>
                     </ul>
