@@ -276,7 +276,6 @@
 
 
             <div class="col-xs-12 subtitulos">
-
               <h4><i class="fa fa-phone "></i>&nbsp;&nbsp;&nbsp;Telefones</h4>
               <br>
             </div>
@@ -292,8 +291,6 @@
             </div>
 
           </div>
-
-
 
           <div class="col-sm-6">
             <div class="col-xs-12 subtitulos">
@@ -324,9 +321,6 @@
 
   </div>
 </div>
-
-
-
 
 <div id="editar-endereco-modal" class="modal fade" data-backdrop="static" role="dialog">
     <div class="modal-dialog">

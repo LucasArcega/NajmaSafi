@@ -127,17 +127,18 @@
                     <form  class="" id="frmMembro" action="">
                         <div class="form-group">
                             <label for="">Nome*</label>
-                            <input class="form-control"  required type="text" name="nome" placeholder="Nome">
+                            <input class="form-control"  required type="text" name="nome" id="nomeMembro" placeholder="Nome">
+                            <input type="hidden" name="codigo" id="codigoMembro" value="0">
                         </div>
 
                         <div class="form-group">
                             <label for="">Descrição*</label>
-                            <textarea class="form-control"  placeholder="Descrição" rows="5" required name="descricao"></textarea>
+                            <textarea class="form-control"  placeholder="Descrição" id="descricaoMembro" rows="5" required name="descricao"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="">Foto*</label>
-                            <input type="file"  accept="image/*" name="imagem" file-upload required >
+                            <input type="file"  accept="image/*" name="imagem" file-upload >
                         </div>
 
                         <div class="text-right">

@@ -80,6 +80,25 @@
 
         }
 
+        public function UpdateMembro($codigo, $nome, $sobre, $enderecoImagem){
+
+            if($enderecoImagem != null){
+                $sql = "UPDATE membros SET nomeMembro = '$nome', sobreMembro = '$$sobre', enderecoImagemMembro = '$enderecoImagem' 
+                        WHERE codigoMembro = $codigo";
+
+            }else{
+                $sql = "UPDATE membros SET nomeMembro = '$nome', sobreMembro = '$$sobre' 
+                        WHERE codigoMembro = $codigo";
+            }
+
+            if($this->ReturnBanco()->query($sql)){
+                return(true);
+            }
+            else{
+                return $this->ReturnBanco()->error;
+            }
+        }
+
 	}
 
 

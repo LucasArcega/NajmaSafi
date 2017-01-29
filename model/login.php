@@ -8,8 +8,8 @@
         function Login($usuario, $senha){
 
             parent::__construct();
-
-            $query = "SELECT loginUsuario, senhaUsuario FROM usuarios WHERE loginUsuario = '{$usuario}' AND BINARY senhaUsuario = '{$senha}' ";
+            $senha = sha1($senha);
+            $query = "SELECT loginUsuario, senhaUsuario FROM usuarios WHERE loginUsuario = '{$usuario}' AND senhaUsuario = '{$senha}' ";
             //$query = "SELECT login, senha FROM Usuarios WHERE login = '{$usuario}' AND senha = MD5('$senha') ";
 
             if($dados = $this->ReturnBanco()->query($query)){
